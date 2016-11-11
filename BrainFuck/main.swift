@@ -46,6 +46,7 @@ print()
 
 var register = Register()
 var executionStack: [String.Index] = []
+var skipping = false
 var inputs = inputString.unicodeScalars.makeIterator()
 
 var characterIndex = program.startIndex
@@ -65,17 +66,22 @@ while characterIndex != program.endIndex {
         guard let character = UnicodeScalar(register.get()) else { break }
         print(character.description, terminator: "")
     case "[":
-        executionStack.append(characterIndex)
-    case "]":
         if register.get() == 0 {
-            let _ = executionStack.dropLast()
+            skipping = true
         } else {
-            guard let last = executionStack.last else {
+            executionStack.append(characterIndex)
+        }
+    case "]":
+        if skipping == true {
+            skipping = false
+        } else {
+            guard let last = executionStack.popLast() else {
                 print("Unexpected ']' encountered without a preceeding '['")
                 exit(0)
             }
             
             characterIndex = last
+            continue
         }
     default:
         break
