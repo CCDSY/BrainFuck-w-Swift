@@ -1,0 +1,15 @@
+let inputString: String
+if CommandLine.arguments.count > 1 {
+    inputString = CommandLine.arguments[1]
+} else {
+    var line: String? = nil
+    while line == nil {
+        print("Pending for input...")
+        line = readLine()
+    }
+    inputString = line!
+}
+var register = Register()
+var executionStack: [String.Index] = []
+var skipping = false
+var inputs = inputString.unicodeScalars.makeIterator()

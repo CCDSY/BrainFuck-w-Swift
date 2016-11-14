@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>&gt;</key>
+	<string>register.incrementIndex()</string>
+	<key>&lt;</key>
+	<string>register.decrementIndex()</string>
+	<key>+</key>
+	<string>register.incrementValue()</string>
+	<key>-</key>
+	<string>register.decrementValue()</string>
+	<key>,</key>
+	<string>register.set(inputs.next()?.intValue ?? 0)</string>
+	<key>.</key>
+	<string>print(UnicodeScalar(register.get()) ?? &quot;&quot;, terminator: &quot;&quot;)</string>
+	<key>[</key>
+	<string>while register.get() != 0 {</string>
+	<key>]</key>
+	<string>}</string>
+</dict>
+</plist>

@@ -8,27 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		427BBB571DD525AE00D7DCA6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB561DD525AE00D7DCA6 /* main.swift */; };
-		427BBB5E1DD5388800D7DCA6 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB5D1DD5388800D7DCA6 /* Register.swift */; };
-		427BBB621DD5402C00D7DCA6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB611DD5402C00D7DCA6 /* Helpers.swift */; };
+		429481231DDA13B4003E4AF4 /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429481221DDA13B4003E4AF4 /* FileManager+.swift */; };
+		429481251DDA13D8003E4AF4 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429481241DDA13D8003E4AF4 /* String+.swift */; };
+		8D5F1FB41DDA1C7B000FE59E /* main-start.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 429481191DDA0C88003E4AF4 /* main-start.txt */; };
+		8D5F1FB51DDA1C7B000FE59E /* Helpers.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4294811A1DDA0C88003E4AF4 /* Helpers.txt */; };
+		8D5F1FB61DDA1C7B000FE59E /* Register.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4294811B1DDA0C88003E4AF4 /* Register.txt */; };
+		8D5F1FB71DDA1C7B000FE59E /* Instructions.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 429481201DDA0D27003E4AF4 /* Instructions.plist */; };
+		8DCB57341DDA45E200B4A03F /* main-end.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DCB57331DDA457A00B4A03F /* main-end.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		427BBB511DD525AE00D7DCA6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
+				8D5F1FB41DDA1C7B000FE59E /* main-start.txt in CopyFiles */,
+				8DCB57341DDA45E200B4A03F /* main-end.txt in CopyFiles */,
+				8D5F1FB51DDA1C7B000FE59E /* Helpers.txt in CopyFiles */,
+				8D5F1FB61DDA1C7B000FE59E /* Register.txt in CopyFiles */,
+				8D5F1FB71DDA1C7B000FE59E /* Instructions.plist in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		427BBB531DD525AE00D7DCA6 /* BrainFuck */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BrainFuck; sourceTree = BUILT_PRODUCTS_DIR; };
 		427BBB561DD525AE00D7DCA6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		427BBB5D1DD5388800D7DCA6 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		427BBB611DD5402C00D7DCA6 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		429481191DDA0C88003E4AF4 /* main-start.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "main-start.txt"; sourceTree = "<group>"; };
+		4294811A1DDA0C88003E4AF4 /* Helpers.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Helpers.txt; sourceTree = "<group>"; };
+		4294811B1DDA0C88003E4AF4 /* Register.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Register.txt; sourceTree = "<group>"; };
+		429481201DDA0D27003E4AF4 /* Instructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Instructions.plist; sourceTree = "<group>"; };
+		429481221DDA13B4003E4AF4 /* FileManager+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
+		429481241DDA13D8003E4AF4 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		8DCB57331DDA457A00B4A03F /* main-end.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "main-end.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +77,13 @@
 			isa = PBXGroup;
 			children = (
 				427BBB561DD525AE00D7DCA6 /* main.swift */,
-				427BBB611DD5402C00D7DCA6 /* Helpers.swift */,
-				427BBB5D1DD5388800D7DCA6 /* Register.swift */,
+				429481221DDA13B4003E4AF4 /* FileManager+.swift */,
+				429481241DDA13D8003E4AF4 /* String+.swift */,
+				429481191DDA0C88003E4AF4 /* main-start.txt */,
+				8DCB57331DDA457A00B4A03F /* main-end.txt */,
+				4294811A1DDA0C88003E4AF4 /* Helpers.txt */,
+				4294811B1DDA0C88003E4AF4 /* Register.txt */,
+				429481201DDA0D27003E4AF4 /* Instructions.plist */,
 			);
 			path = BrainFuck;
 			sourceTree = "<group>";
@@ -128,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				427BBB571DD525AE00D7DCA6 /* main.swift in Sources */,
-				427BBB5E1DD5388800D7DCA6 /* Register.swift in Sources */,
-				427BBB621DD5402C00D7DCA6 /* Helpers.swift in Sources */,
+				429481251DDA13D8003E4AF4 /* String+.swift in Sources */,
+				429481231DDA13B4003E4AF4 /* FileManager+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +196,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -218,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -261,6 +281,7 @@
 				427BBB5C1DD525AE00D7DCA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
