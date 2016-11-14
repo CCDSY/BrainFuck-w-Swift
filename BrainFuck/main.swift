@@ -9,7 +9,7 @@
 import Foundation
 
 guard CommandLine.arguments.count > 1 else {
-    print("Usage: brianfuckc {program filename}")
+    print("Usage: brianfuckc {path to program source file} [{path to output executable}]")
     exit(0)
 }
 
@@ -103,11 +103,7 @@ let outputProgramSourceComponents = [importStatement, programRegisterSource, pro
 let outputProgramSourceString = outputProgramSourceComponents.joined(separator: "\n")
 
 let manager = FileManager.default
-//let outputDirectory = manager.userTemporaryDirectoryPath ?? manager.localTemporaryDirectoryPath
-guard let outputDirectoryPath = manager.urls(for: .desktopDirectory, in: .userDomainMask).first?.path else {
-    print("Fatal Error: Desktop directory path not found!")
-    exit(1)
-}
+let outputDirectoryPath = manager.userTemporaryDirectoryPath ?? manager.localTemporaryDirectoryPath
 let outputSourceFilePath = outputDirectoryPath.appending(pathComponent: "main.swift")
 
 do {
@@ -118,3 +114,31 @@ do {
 }
 
 /* Write generated program source file ends here */
+
+/* Compile the generated program into an executable */
+
+let outputExecutableFilePath: String
+if CommandLine.arguments.count > 2 {
+    outputExecutableFilePath = URL(fileURLWithPath: CommandLine.arguments[2], relativeTo: URL(fileURLWithPath: CommandLine.arguments[0])).path
+} else {
+    outputExecutableFilePath = CommandLine.arguments[0].appending(pathComponent: "main")
+}
+
+let process = Process()
+process.launchPath = "/usr/bin/xcrun"
+process.arguments = ["--sdk", "macosx", "swiftc", outputSourceFilePath, "-o", outputExecutableFilePath]
+process.standardError = Pipe()
+process.standardOutput = Pipe()
+
+process.launch()
+process.waitUntilExit()
+
+/* Compile the generated program into an executable */
+
+/* Display any error that occurred during compilation */
+
+if let errorData = (process.standardError as? Pipe)?.fileHandleForReading.readDataToEndOfFile(), let error = String(data: errorData, encoding: .utf8) {
+    print(error)
+}
+
+/* Display any error that occurred during compilation */
