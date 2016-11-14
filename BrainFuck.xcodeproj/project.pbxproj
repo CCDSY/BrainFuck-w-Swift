@@ -10,6 +10,8 @@
 		427BBB571DD525AE00D7DCA6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB561DD525AE00D7DCA6 /* main.swift */; };
 		427BBB5E1DD5388800D7DCA6 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB5D1DD5388800D7DCA6 /* Register.swift */; };
 		427BBB621DD5402C00D7DCA6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BBB611DD5402C00D7DCA6 /* Helpers.swift */; };
+		42FE73341DDA54CE002BF286 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE73331DDA54CE002BF286 /* Runtime.swift */; };
+		42FE73361DDA6091002BF286 /* SyntaxError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE73351DDA6091002BF286 /* SyntaxError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		427BBB561DD525AE00D7DCA6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		427BBB5D1DD5388800D7DCA6 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		427BBB611DD5402C00D7DCA6 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		42FE73331DDA54CE002BF286 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
+		42FE73351DDA6091002BF286 /* SyntaxError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				427BBB561DD525AE00D7DCA6 /* main.swift */,
+				42FE73331DDA54CE002BF286 /* Runtime.swift */,
+				42FE73351DDA6091002BF286 /* SyntaxError.swift */,
 				427BBB611DD5402C00D7DCA6 /* Helpers.swift */,
 				427BBB5D1DD5388800D7DCA6 /* Register.swift */,
 			);
@@ -127,6 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FE73341DDA54CE002BF286 /* Runtime.swift in Sources */,
+				42FE73361DDA6091002BF286 /* SyntaxError.swift in Sources */,
 				427BBB571DD525AE00D7DCA6 /* main.swift in Sources */,
 				427BBB5E1DD5388800D7DCA6 /* Register.swift in Sources */,
 				427BBB621DD5402C00D7DCA6 /* Helpers.swift in Sources */,
@@ -176,7 +184,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -218,7 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -261,6 +269,7 @@
 				427BBB5C1DD525AE00D7DCA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

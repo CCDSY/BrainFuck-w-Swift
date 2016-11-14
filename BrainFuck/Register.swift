@@ -37,7 +37,7 @@ struct Register {
         self[currentIndex] = value
     }
     
-    mutating func get() -> Int {
+    func get() -> Int {
         return self[currentIndex]
     }
     

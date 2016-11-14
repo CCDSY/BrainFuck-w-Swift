@@ -44,51 +44,12 @@ print("With inputs: ")
 print(inputString)
 print()
 
-var register = Register()
-var executionStack: [String.Index] = []
-// FIXME: When a skipping loop is contained within another skipping loop, this will not work.
-var skipping = false
-var inputs = inputString.unicodeScalars.makeIterator()
+var runtime = Runtime(program: program, inputString: inputString)
 
-var characterIndex = program.startIndex
-while characterIndex != program.endIndex {
-    switch program[characterIndex] {
-    case ">":
-        register.incrementIndex()
-    case "<":
-        register.decrementIndex()
-    case "+":
-        register.incrementValue()
-    case "-":
-        register.decrementValue()
-    case ",":
-        register.set(inputs.next()?.intValue ?? 0)
-    case ".":
-        guard let character = UnicodeScalar(register.get()) else { break }
-        print(character.description, terminator: "")
-    case "[":
-        if register.get() == 0 {
-            skipping = true
-        } else {
-            executionStack.append(characterIndex)
-        }
-    case "]":
-        if skipping == true {
-            skipping = false
-        } else {
-            guard let last = executionStack.popLast() else {
-                print("Unexpected ']' encountered without a preceeding '['")
-                exit(0)
-            }
-            
-            characterIndex = last
-            continue
-        }
-    default:
-        break
-    }
-    
-    characterIndex = program.index(after: characterIndex)
+do {
+    try runtime.execute()
+} catch {
+    print(error)
 }
 
 print()
