@@ -26,7 +26,9 @@ struct Runtime {
             let instruction = instructions[index]
             
             if instruction == "[" {
-                index = executeLoop(starting: index + 1) + 1
+                index = try executeLoop(starting: index + 1) + 1
+            } else if instruction == "]" {
+                throw SyntaxError(description: "Unexpected ']' encountered without a preceeding '['")
             } else {
                 execute(instruction: instruction)
                 
@@ -35,14 +37,18 @@ struct Runtime {
         }
     }
     
-    private mutating func executeLoop(starting startIndex: Int) -> Int {
+    private mutating func executeLoop(starting startIndex: Int) throws -> Int {
         while true {
             var index = startIndex
-            while index < instructions.count {
+            while true {
+                guard index < instructions.count else {
+                    throw SyntaxError(description: "Unexpected '[' encountered without a matching ']'")
+                }
+                
                 let instruction = instructions[index]
                 
                 if instruction == "[" {
-                    index = executeLoop(starting: index + 1) + 1
+                    index = try executeLoop(starting: index + 1) + 1
                 } else if instruction == "]" {
                     if register.get() == 0 {
                         return index
