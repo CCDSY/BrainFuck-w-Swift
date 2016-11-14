@@ -46,6 +46,7 @@ print()
 
 var register = Register()
 var executionStack: [String.Index] = []
+// FIXME: When a skipping loop is contained within another skipping loop, this will not work.
 var skipping = false
 var inputs = inputString.unicodeScalars.makeIterator()
 
